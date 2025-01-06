@@ -3,6 +3,7 @@ import App from './App.vue';
 import i18n from "./i18n";
 import store from './store';
 import router from './route';
+import './assets/scss/main.scss';
 
 async function initializeApp() {
     try {

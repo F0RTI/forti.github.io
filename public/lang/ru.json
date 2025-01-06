@@ -1,3 +1,6 @@
 {
-    "home.hi": "Привет"
+    "home.hi": "Привет",
+    "admin.home.header.home": "Главная",
+    "admin.home.sidemenu.pages": "Страницы",
+    "admin.home.sidemenu.routes": "Маршруты"
 }

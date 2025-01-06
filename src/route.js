@@ -1,15 +1,25 @@
 import {createRouter, createWebHistory} from 'vue-router';
-import HomePage from "./views/HomePage.vue";
+import HomePage from "./views/builder/HomePage.vue";
+import AdminHomePage from "./views/admin/HomePage.vue";
 import NProgress from 'nprogress';
 import './assets/css/nprogress.css';
 
 const routes = [
     {
         path: '/',
-        name: 'Main',
+        name: 'Home',
         component: HomePage,
         meta: {
-            title: 'Wallet',
+            title: 'Home',
+            isRequiresAuth: false
+        }
+    },
+    {
+        path: '/admin/home',
+        name: 'Admin',
+        component: AdminHomePage,
+        meta: {
+            title: 'Admin Home',
             isRequiresAuth: false
         }
     }
@@ -38,9 +48,9 @@ router.afterEach(() => {
 });
 
 NProgress.configure({
-    showSpinner: false, // Отключаем спиннер
-    speed: 500,         // Скорость анимации
-    minimum: 0.2        // Минимальная начальная ширина
+    showSpinner: false,
+    speed: 500,
+    minimum: 0.2
 });
 
 export default router;

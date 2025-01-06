@@ -1,3 +1,6 @@
 {
-    "home.hi": "Hi"
+    "home.hi": "Hi",
+    "admin.home.header.home": "Home",
+    "admin.home.sidemenu.pages": "Pages",
+    "admin.home.sidemenu.routes": "Routes"
 }

@@ -1,10 +1,10 @@
 import { createI18n } from 'vue-i18n';
-import ru from '../public/lang/ru.json'
-import en from '../public/lang/en.json'
+import ru from '../public/lang/ru.json';
+import en from '../public/lang/en.json';
 
 const messages = {
     en: en,
-    ru: ru
+    ru: ru,
 };
 
 const i18n = createI18n({

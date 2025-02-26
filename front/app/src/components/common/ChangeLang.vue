@@ -6,21 +6,21 @@
 </template>
 
 <script>
-    import { mapActions } from 'vuex';
+import { mapActions } from 'vuex';
 
-    export default {
-        name: 'ChangeLang',
-        props:  {
-          styleType: {
+export default {
+    name: 'ChangeLang',
+    props: {
+        styleType: {
             type: String,
-            default: 'buttons'
-          }
+            default: 'buttons',
         },
-        methods: {
-            ...mapActions(['changeLang']),
-            changeLanguage(lang) {
-                this.changeLang(lang);
-            }
-        }
-    }
+    },
+    methods: {
+        ...mapActions(['changeLang']),
+        changeLanguage(lang) {
+            this.changeLang(lang);
+        },
+    },
+};
 </script>

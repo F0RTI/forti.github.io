@@ -1,11 +1,9 @@
 <template>
-    <div>
-      Login
-    </div>
-  </template>
-  
-  <script>
-  export default {
+    <div>Login</div>
+</template>
+
+<script>
+export default {
     name: 'LoginPage',
-  }
-  </script>
+};
+</script>

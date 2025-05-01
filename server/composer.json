@@ -1,0 +1,7 @@
+{
+    "name": "myvendor/myproject",
+    "description": "A simple PHP project",
+    "require": {
+        "symfony/routing": "^7.2.3"
+    }
+}

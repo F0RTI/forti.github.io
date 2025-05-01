@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import HomePage from './views/builder/HomePage.vue';
-import AdminHomePage from './views/admin/HomePage.vue';
+import HomePage from './components/views/builder/HomePage.vue';
+import AdminHomePage from './components/views/admin/HomePage.vue';
+import Login from './components/views/builder/Login.vue';
 import NProgress from 'nprogress';
 import './assets/css/nprogress.css';
 
@@ -17,12 +18,21 @@ const routes: Array<RouteRecordRaw> = [
         },
     },
     {
+        path: '/login',
+        name: 'Login',
+        component: Login,
+        meta: {
+            title: 'Login',
+            isRequiresAuth: false,
+        },
+    },
+    {
         path: '/admin/home',
         name: 'Admin',
         component: AdminHomePage,
         meta: {
             title: 'Admin Home',
-            isRequiresAuth: false,
+            isRequiresAuth: true,
         },
     },
 ];

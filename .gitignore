@@ -1,0 +1,25 @@
+front/app/node_modules
+front/app/dist
+front/app/package-lock.json
+front/app/yarn.lock
+
+# local env files
+front/app/.env.local
+front/app/.env.*.local
+
+# Log files
+front/app/npm-debug.log*
+front/app/yarn-debug.log*
+front/app/yarn-error.log*
+front/app/pnpm-debug.log*
+
+# Editor directories and files
+front/app/.idea
+front/app/.vscode
+front/app/*.suo
+front/app/*.ntvs*
+front/app/*.njsproj
+front/app/*.sln
+front/app/*.sw?
+
+.history

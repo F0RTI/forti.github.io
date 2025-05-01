@@ -3,19 +3,20 @@
     "version": "0.1.0",
     "private": true,
     "scripts": {
-        "serve": "vue-cli-service serve",
-        "build": "vue-cli-service build",
-        "lint": "vue-cli-service lint"
+        "front-start": "vue-cli-service serve",
+        "front-build": "vue-cli-service build",
+        "front-lint": "vue-cli-service lint"
     },
+    "docker": {},
     "dependencies": {
         "core-js": "^3.8.3",
-        "d-icon": "../../../d-icon",
         "js-cookie": "^3.0.5",
         "nprogress": "^0.2.0",
         "vue": "^3.2.13",
         "vue-i18n": "^11.0.1",
         "vue-router": "^4.5.0",
-        "vuex": "^4.0.2"
+        "vuex": "^4.0.2",
+        "yarn": "^1.22.22"
     },
     "devDependencies": {
         "@babel/core": "^7.12.16",
@@ -24,10 +25,11 @@
         "@vue/cli-plugin-babel": "~5.0.0",
         "@vue/cli-plugin-eslint": "~5.0.0",
         "@vue/cli-service": "~5.0.0",
-        "eslint": "^8.57.1",
+        "eslint": "8.57.1",
         "eslint-config-prettier": "^10.0.1",
         "eslint-plugin-prettier": "^5.2.3",
         "eslint-plugin-vue": "^9.32.0",
+        "prettier": "3.5.2",
         "sass": "^1.83.1",
         "sass-loader": "^16.0.4",
         "ts-loader": "^9.5.2",

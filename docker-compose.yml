@@ -1,0 +1,79 @@
+services:
+  # PHP + Apache
+  nginx:
+    image: nginx:latest
+    container_name: nginx
+    ports:
+      - "80:80"
+    volumes:
+      - ./server/nginx/default.conf:/etc/nginx/conf.d/default.conf # Config Nginx
+      - ./server:/var/www/html  # Project files
+    depends_on:
+      - php
+    networks:
+      - backend
+
+  # PHP App
+  php:
+    build:
+      context: ./server 
+      dockerfile: Dockerfile
+    container_name: php
+    volumes:
+      - ./server:/var/www/html
+    extra_hosts:
+      host.docker.internal: host-gateway
+    command: php-fpm
+    depends_on:
+      - db
+    networks:
+      - backend
+
+  # MySQL
+  db:
+    image: mysql:8.0
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: mydatabase
+      MYSQL_USER: myuser
+      MYSQL_PASSWORD: pass
+    volumes:
+      - db_data:/var/lib/mysql
+    ports:
+      - "3306:3306"
+    networks:
+      - backend
+
+  # phpMyAdmin
+  phpmyadmin:
+    image: phpmyadmin:latest
+    restart: always
+    ports:
+      - "8081:80"
+    environment:
+      PMA_HOST: db
+      MYSQL_ROOT_PASSWORD: rootpassword
+    depends_on:
+      - db
+    networks:
+      - backend
+  
+  # Front
+  # front:
+  #   build:
+  #     context: ./front/app
+  #     dockerfile: Dockerfile
+  #   container_name: front
+  #   ports:
+  #     - "8080:8080"
+  #   depends_on:
+  #     - db
+  #   networks:
+  #     - backend
+
+volumes:
+  db_data:
+
+networks:
+  backend:
